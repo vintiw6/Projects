@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "string": "cpp"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true
+}
