@@ -1,18 +1,26 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+/*The <cctype> header file in C++ is part of the C Standard Library and provides functions for classifying and manipulating characters
+       e.g. isdigit(c): Checks if c is a digit (0-9).*/
 
 using namespace std;
 
 class CreditCard {
 public:
+
   bool isNumber(const string& number) const {  
+    return number.length() == 16;
   }
+  /*Here we are comparing the given card number if it consist of 16 digits or not*/
+
 
   bool isBrand(const string& brand) const {
     static const string validBrands[] = {"mastercard", "visa", "American Express", "Rupay"}; 
     return validBrands;
   }
+  /*Here we are checking the given card brand if it cmatches or not*/
+
 
   bool isLuhnValid(const string& cardNo) const {
     int nDigits = cardNo.length();
@@ -28,9 +36,8 @@ public:
     }
     return (nSum % 10 == 0);
   }
-
-private:
-  string cardNumber_; 
+/*Here we are using luhn algorithm to finally verify if its a actual card number or not*/  
+// For further info on this algorithm = https://www.geeksforgeeks.org/luhn-algorithm/ 
 };
 
 int main() {
@@ -40,11 +47,13 @@ int main() {
 
   CreditCard validator;
   if (validator.isNumber(cardNumber) && validator.isLuhnValid(cardNumber)) {
+    /* This is to ensure that all the steps go continously */
     
     string brand = "Unknown"; 
     if (validator.isBrand(cardNumber.substr(0, 2)) || validator.isBrand(cardNumber.substr(0, 1))) { 
       brand = cardNumber.substr(0, (validator.isBrand(cardNumber.substr(0, 2)) ? 2 : 1)); 
     }
+    /* Incase the brand doesn't match*/
     cout << "Valid credit card number. Brand: " << brand << endl;
   } else {
     cout << "Invalid credit card number." << endl;
