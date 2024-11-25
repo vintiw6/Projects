@@ -15,10 +15,15 @@ public:
   /*Here we are comparing the given card number if it consist of 16 digits or not*/
 
 
-  bool isBrand(const string& brand) const {
-    static const string validBrands[] = {"mastercard", "visa", "American Express", "Rupay"}; 
-    return validBrands;
-  }
+bool isBrand(const string& brand) const {
+    static const string validBrands[] = {"Mastercard", "Visa", "American Express", "Rupay"};
+    for(const string& validBrand : validBrands){
+        if(brand == validBrand){
+            return true; // Return true if the given brand matches one of the valid brands
+        }
+    }
+    return false; // Return false if the given brand doesn't match any of the valid brands
+}
   /*Here we are checking the given card brand if it cmatches or not*/
 
 
@@ -42,13 +47,13 @@ public:
 
 int main() {
   string cardNumber;
-  cout << "Enter a credit card number: ";
+  cout << "Enter a credit card number: " << endl;
   getline(cin, cardNumber);
 
   CreditCard validator;
   if (validator.isNumber(cardNumber) && validator.isLuhnValid(cardNumber)) {
     /* This is to ensure that all the steps go continously */
-    
+
     string brand = "Unknown"; 
     if (validator.isBrand(cardNumber.substr(0, 2)) || validator.isBrand(cardNumber.substr(0, 1))) { 
       brand = cardNumber.substr(0, (validator.isBrand(cardNumber.substr(0, 2)) ? 2 : 1)); 
@@ -61,3 +66,4 @@ int main() {
 
   return 0;
 }
+
