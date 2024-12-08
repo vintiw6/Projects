@@ -3,7 +3,7 @@ from tkinter import messagebox
 import random
 
 MAX_LINES = 3
-MAX_BET = 100
+MAX_BET = 1000
 MIN_BET = 1
 
 ROWS = 3
@@ -13,7 +13,7 @@ symbol_count = {
     "A": 2,
     "B": 4,
     "C": 6,
-    "D": 8
+    "D": 8,
 }
 
 symbol_value = {
@@ -161,4 +161,3 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = SlotMachineApp(root)
     root.mainloop()
------

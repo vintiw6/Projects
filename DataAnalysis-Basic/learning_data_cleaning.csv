@@ -1,0 +1,9 @@
+Name,Age,Place,Married,Items Purchased,Gender
+Alice,25.0,New York,Yes,Laptop,Female
+Bob,30.0,Los Angeles,No,Phone,Male
+Charlie,,Chicago,Yes,,Male
+David,40.0,,Yes,Tablet,Male
+Eve,22.0,Miami,No,Headphones,Female
+Frank,35.0,Houston,,Monitor,Male
+Grace,,Dallas,No,Keyboard,Female
+Hannah,29.0,Seattle,Yes,Mouse,
