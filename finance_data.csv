@@ -1,3 +1,33 @@
 date,amount,category,description
-28-04-2024,125.65,Income,Salary
-07-07-2024,125.0,Income,Side Gig
+01-01-2024,1500,Income,Salary
+15-01-2024,250,Expense,Groceries
+01-02-2024,1600,Income,Salary
+18-02-2024,300,Expense,Electricity Bill
+01-03-2024,1550,Income,Salary
+12-03-2024,275,Expense,Internet Bill
+01-04-2024,1625,Income,Freelance Project
+10-04-2024,400,Expense,Car Maintenance
+01-05-2024,1700,Income,Bonus
+22-05-2024,350,Expense,Medical Bills
+01-06-2024,1750,Income,Stock Dividend
+19-06-2024,375,Expense,Gasoline
+01-07-2024,1800,Income,Consulting Fees
+08-07-2024,500,Expense,Rent
+01-08-2024,1850,Income,Freelance Project
+14-08-2024,450,Expense,Subscription Services
+01-09-2024,1900,Income,Side Gig
+09-09-2024,550,Expense,Entertainment
+01-10-2024,1950,Income,Investment Returns
+20-10-2024,600,Expense,Shopping
+01-11-2024,2000,Income,Salary
+12-11-2024,650,Expense,Vacation
+01-12-2024,2100,Income,Freelance Project
+05-12-2024,700,Expense,Home Repairs
+01-01-2025,2200,Income,Year-End Bonus
+15-01-2025,750,Expense,Restaurant
+01-02-2025,2250,Income,Consulting Fees
+20-02-2025,800,Expense,Education Fees
+01-03-2025,2300,Income,Stock Dividend
+10-03-2025,850,Expense,Gym Membership
+01-04-2025,2400,Income,Investment Returns
+18-04-2025,900,Expense,New Laptop
