@@ -2,7 +2,7 @@ import pandas as pd
 import csv
 import matplotlib.pyplot as plt
 from datetime import datetime
-from data_entry import get_amount, get_category, get_date, get_description
+from SmartFinanceTracker.Code.data_entry import get_amount, get_category, get_date, get_description
 
 
 
@@ -117,7 +117,7 @@ def main ():
             start_date = get_date("Enter the start date(dd-mm-yyyy): ")
             end_date = get_date("Enter the end date(dd-mm-yyyy): ")
             df = CSV.get_transactions(start_date , end_date)  # Ensure CSV.get_transactions exists
-            if input("Do you want to see a plot? (y/n)").lower() == "y":
+            if input("\nDo you want to see a plot? (y/n)").lower() == "y":
                 plot_transactions(df)
         elif choice =="3":
             print("Exiting...")
