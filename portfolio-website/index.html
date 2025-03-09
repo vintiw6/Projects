@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vinayak - Developer Portfolio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="nav.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<div class="left">Vinayak's Portfolio</div>
+				<div class="right">
+					<ul>
+						<li><a href="/Home">Home</a></li>
+						<li><a href="/#About">About</a></li>
+						<li><a href="/#projects">Projects</a></li>
+						<li><a href="/#Contact Me">Contact Me</a></li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<section class="firstSection">
+				<div class="leftSection">
+					Hi, I am <span class="purple"> Vinayak </span>
+					<div>and I am a</div>
+					<span id="element"></span>
+				</div>
+				<div class="rightSection">
+					<img src="dev.png" alt="Developer Image" />
+				</div>
+			</section>
+			<hr>
+
+			<section id="About" class="aboutMe">
+				<div class="header-container">
+					<h1 class="section-header">About Me</h1>
+				</div>
+				<div class="secondSection">
+					<div class="about-container"></div>
+					<img src="data.png" alt="Data Analysis" class="about-image" />
+					<div class="about-content">
+						<p>
+							I am Vinayak Tiwari, a passionate Computer Science Engineering
+							(Data Science) student at CSVTU, Bhilai. I have a strong interest
+							in programming, data structures, and algorithmic problem-solving.
+							My expertise includes Python, C++, and R, along with hands-on
+							experience in data analysis, visualization, and machine learning
+							basics.
+						</p>
+						<p>
+							Additionally, I have a solid foundation in web development,
+							working with HTML, CSS, JavaScript, and frameworks like React.js
+							to build responsive and interactive web applications. As a member
+							of CSVTU’s coding club, Programmers’ Paradise, I actively
+							participate in tech discussions, workshops, and open-source
+							contributions, continuously expanding my skill set.
+						</p>
+			</section>
+
+			<hr class="section-divider" />
+
+			<section id="projects" class="projects-section">
+				<div class="header-container">
+					<h1 class="section-header">My Projects</h1>
+				</div>
+
+			
+				<div class="projects-container">
+					<!-- Credit Card Validator -->
+					<div class="project-tile">
+						<img src="credit.jpg" alt="Credit Card Validator">
+						<h2>Credit Card Validator</h2>
+						<a href="https://github.com/vintiw6/Projects/tree/main/creditcard-validator" target="_blank">View Project</a>
+					</div>
+			
+					<!-- Slot Machine -->
+					<div class="project-tile">
+						<img src="slots.jpg" alt="Slot Machine">
+						<h2>Slot Machine</h2>
+						<a href="https://github.com/vintiw6/Projects/tree/main/slot-machine" target="_blank">View Project</a>
+					</div>
+			
+					<!-- Data Analysis Basics -->
+					<div class="project-tile">
+						<img src="stats.jpg" alt="Data Analysis Basics">
+						<h2>Data Analysis Basics</h2>
+						<a href="https://github.com/vintiw6/Projects/tree/main/dataanalysis-basics" target="_blank">View Project</a>
+					</div>
+			
+					<!-- Smart Finance Tracker -->
+					<div class="project-tile">
+						<img src="finance.jpg" alt="Smart Finance Tracker">
+						<h2>Smart Finance Tracker</h2>
+						<a href="https://github.com/vintiw6/Projects/tree/main/smart-finance-tracker" target="_blank">View Project</a>
+					</div>
+				</div>
+			</section>
+			
+			
+			
+
+		</main>
+
+		<!-- Typed.js Script -->
+		<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+		<script>
+			var typed = new Typed("#element", {
+				strings: ["Data Analyst", "Web Developer", "Graphic Designer"],
+				typeSpeed: 50,
+			});
+		</script>
+		<script src="script.js"></script>
+	</body>
+</html>
