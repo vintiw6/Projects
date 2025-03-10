@@ -1,0 +1,78 @@
+#About {
+	padding-top: 100px; /* Adjust this based on header height */
+}
+
+.aboutMe {
+	width: 80%;
+	margin-left: 50px; /* Adjust this value to match My Projects */
+}
+.aboutMe h1 {
+	font-size: 4rem; /* Same as My Projects */
+	font-weight: bold;
+	color: white;
+	margin-bottom: 25px;
+	margin-left: 200px;
+}
+
+.secondSection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 100px 0;
+	gap: 80px; /* Space between text and image */
+	position: relative;
+	left: 20px;
+}
+
+.about-content {
+	width: 50%;
+	font-size: 1.2rem;
+	line-height: 1.8;
+	text-align: justify;
+	padding: 20px;
+	position: relative;
+	left: 155px;
+}
+
+.about-image {
+	width: 45%;
+	position: relative;
+	left: 56px; /* Adjust to align with .leftSection */
+}
+
+.bullet-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.bullet-list li {
+	position: relative;
+	padding-left: 25px;
+	opacity: 0;
+	transition: opacity 1s ease-in-out, transform 0.8s ease-out;
+	transform: translateY(20px);
+}
+
+.bullet-list li::before {
+	content: "•"; /* Bullet symbol */
+	color: #aa50ff; /* Same vibrant purple */
+	position: absolute;
+	left: 0;
+	font-size: 20px;
+}
+
+.bullet-list.active li {
+	opacity: 1;
+	transform: translateY(0);
+}
+.fade-in li {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 1s ease-in-out, transform 0.8s ease-out;
+}
+
+.fade-in.active li {
+	opacity: 1;
+	transform: translateY(0);
+}

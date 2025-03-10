@@ -3,9 +3,13 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	height: 80px;
-	background-color: rgb(5, 5, 48);
+	background: rgba(5, 5, 48, 0.1); /* Transparent dark blue */
+	backdrop-filter: blur(10px); /* Blurred background */
+	-webkit-backdrop-filter: blur(10px); /* For Safari */
+	top: 0; /* Stick to the top */
+	left: 0;
+	z-index: 1000; /* Ensure it's always on top */
 }
-
 nav ul {
 	display: flex;
 	justify-content: center;
@@ -34,4 +38,9 @@ nav ul li a:hover {
 
 .navbar-title {
 	padding-left: 50px; /* Ensure this matches .header-container */
+}
+
+/* Ensure the first section is not hidden under the navbar */
+main {
+	padding-top: 90px; /* Offset for fixed navbar */
 }

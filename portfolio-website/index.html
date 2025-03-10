@@ -10,35 +10,68 @@
 			href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Preahvihear&display=swap"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="nav.css" />
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="css/particles.css">
+        
+
+
+		<!-- Updated CSS file paths -->
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/header.css" />
+		<link rel="stylesheet" href="css/home.css" />
+		<link rel="stylesheet" href="css/about.css" />
+		<link rel="stylesheet" href="css/projects.css" />
+		<link rel="stylesheet" href="css/nav.css" />
+		<link rel="stylesheet" href="css/particles.css">
+
 	</head>
 	<body>
+		<div id="particles-js"></div>
 		<header>
 			<nav>
 				<div class="left">Vinayak's Portfolio</div>
 				<div class="right">
 					<ul>
-						<li><a href="/Home">Home</a></li>
-						<li><a href="/#About">About</a></li>
-						<li><a href="/#projects">Projects</a></li>
-						<li><a href="/#Contact Me">Contact Me</a></li>
+						<li><a href="#Home">Home</a></li>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#Contact">Contact Me</a></li>
+
 					</ul>
 				</div>
 			</nav>
 		</header>
 
 		<main>
-			<section class="firstSection">
+			<section class="firstSection" id="Home">
 				<div class="leftSection">
-					Hi, I am <span class="purple"> Vinayak </span>
-					<div>and I am a</div>
-					<span id="element"></span>
+					<div class="fade-text">Hi, I am <span class="purple"> Vinayak </span></div>
+					<div class="fade-text">and I am a</div>
+					<span id="element" class="fade-text"></span> <!-- ✅ Only one instance -->
+				
+					<div class="social-icons">
+						<a href="https://github.com/vintiw6" target="_blank">
+							<img src="Social-icons/medium/light/github.svg" alt="GitHub">
+						</a>
+						<a href="https://linkedin.com/in/vintiw6/" target="_blank">
+							<img src="Social-Icons/medium/light/linkedin.svg" alt="LinkedIn">
+						</a>
+						<a href="https://instagram.com/vintiw5/" target="_blank">
+							<img src="Social-Icons/medium/light/instagram.svg" alt="Instagram">
+						</a>
+						<a href="https://discord.com/users/537302375497728000" target="_blank">
+							<img src="Social-Icons/medium/light/discord.svg" alt="Discord">
+						</a>
+					</div>
 				</div>
-				<div class="rightSection">
-					<img src="dev.png" alt="Developer Image" />
+				
+				
+					<div class="rightSection">
+						<img src="Web-Images/dev.png" alt="Developer Image" />
+					</div>
 				</div>
 			</section>
+
 			<hr>
 
 			<section id="About" class="aboutMe">
@@ -47,24 +80,16 @@
 				</div>
 				<div class="secondSection">
 					<div class="about-container"></div>
-					<img src="data.png" alt="Data Analysis" class="about-image" />
+					<img src="Web-Images/data.png" alt="Data Analysis" class="about-image" />
 					<div class="about-content">
-						<p>
-							I am Vinayak Tiwari, a passionate Computer Science Engineering
-							(Data Science) student at CSVTU, Bhilai. I have a strong interest
-							in programming, data structures, and algorithmic problem-solving.
-							My expertise includes Python, C++, and R, along with hands-on
-							experience in data analysis, visualization, and machine learning
-							basics.
-						</p>
-						<p>
-							Additionally, I have a solid foundation in web development,
-							working with HTML, CSS, JavaScript, and frameworks like React.js
-							to build responsive and interactive web applications. As a member
-							of CSVTU’s coding club, Programmers’ Paradise, I actively
-							participate in tech discussions, workshops, and open-source
-							contributions, continuously expanding my skill set.
-						</p>
+						<ul class="fade-text bullet-list">
+							<li>Computer Science Engineering (Data Science) student at CSVTU, Bhilai.</li>
+							<li>Proficient in Python, C++, and R with expertise in data analysis & machine learning basics.</li>
+							<li>Strong understanding of data structures, algorithms, and problem-solving.</li>
+							<li>Experienced in web development using HTML, CSS, JavaScript, and React.js.</li>
+							<li>Active member of CSVTU’s coding club, contributing to workshops and open-source projects.</li>
+						</ul>
+						
 			</section>
 
 			<hr class="section-divider" />
@@ -74,51 +99,44 @@
 					<h1 class="section-header">My Projects</h1>
 				</div>
 
-			
 				<div class="projects-container">
 					<!-- Credit Card Validator -->
 					<div class="project-tile">
-						<img src="credit.jpg" alt="Credit Card Validator">
+						<img src="Project-Images/credit.jpg" alt="Credit Card Validator" loading="lazy">
 						<h2>Credit Card Validator</h2>
 						<a href="https://github.com/vintiw6/Projects/tree/main/creditcard-validator" target="_blank">View Project</a>
 					</div>
 			
 					<!-- Slot Machine -->
 					<div class="project-tile">
-						<img src="slots.jpg" alt="Slot Machine">
+						<img src="Project-Images/slots.jpg" alt="Slot Machine" loading="lazy">
 						<h2>Slot Machine</h2>
 						<a href="https://github.com/vintiw6/Projects/tree/main/slot-machine" target="_blank">View Project</a>
 					</div>
 			
 					<!-- Data Analysis Basics -->
 					<div class="project-tile">
-						<img src="stats.jpg" alt="Data Analysis Basics">
+						<img src="Project-Images/stats.jpg" alt="Data Analysis Basics" loading="lazy">
 						<h2>Data Analysis Basics</h2>
 						<a href="https://github.com/vintiw6/Projects/tree/main/dataanalysis-basics" target="_blank">View Project</a>
 					</div>
 			
 					<!-- Smart Finance Tracker -->
 					<div class="project-tile">
-						<img src="finance.jpg" alt="Smart Finance Tracker">
+						<img src="Project-Images/finance.jpg" alt="Smart Finance Tracker" loading="lazy">
 						<h2>Smart Finance Tracker</h2>
 						<a href="https://github.com/vintiw6/Projects/tree/main/smart-finance-tracker" target="_blank">View Project</a>
 					</div>
 				</div>
 			</section>
-			
-			
-			
 
 		</main>
 
 		<!-- Typed.js Script -->
 		<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-		<script>
-			var typed = new Typed("#element", {
-				strings: ["Data Analyst", "Web Developer", "Graphic Designer"],
-				typeSpeed: 50,
-			});
-		</script>
-		<script src="script.js"></script>
+		
+		<script src="js/script.js"></script>
+		<script src="js/particles.js" defer></script>
+		<script src="js/Typed-delay.js" defer></script>
 	</body>
-</html>
+</html> 
