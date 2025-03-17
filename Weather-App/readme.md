@@ -51,16 +51,16 @@ A dynamic **Weather App** that displays real-time weather conditions and updates
 
 ---
 
+Here's the corrected version where each weather condition appears in a single tile below its respective title:  
+
+---
+
 ## 📸 Screenshots
 
 | 🌤️ Sunny | 🌧️ Rain | ☁️ Cloudy |
-|----------|---------|----------------|
-| ![Sunny](![image](https://github.com/user-attachments/assets/1078ecd6-d0a6-46bd-bb9a-b6198baa53ef)) 
-           | ![Rain](![image](https://github.com/user-attachments/assets/011c1e07-d543-4904-9213-627f5524eed6)) 
-                     | ![Cloudy](![image](https://github.com/user-attachments/assets/5afed0e0-ec9c-46b9-b58f-6f468ec56651)) 
-                                        |
+|----------|---------|---------|
+| ![Sunny](https://github.com/user-attachments/assets/1078ecd6-d0a6-46bd-bb9a-b6198baa53ef) | ![Rain](https://github.com/user-attachments/assets/011c1e07-d543-4904-9213-627f5524eed6) | ![Cloudy](https://github.com/user-attachments/assets/5afed0e0-ec9c-46b9-b58f-6f468ec56651) |
 
----
 
 ## 💡 Future Enhancements
 
