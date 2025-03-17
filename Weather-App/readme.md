@@ -4,7 +4,7 @@
 A dynamic **Weather App** that displays real-time weather conditions and updates the background animations accordingly. Built with **HTML, CSS, and JavaScript**, it fetches live weather data using the **OpenWeather API** and provides smooth transitions for various weather conditions like ☀️ sunny, 🌧️ rain, ❄️ snow, and ⛈️ thunderstorms.
 
 🔗 **Live Demo:** [Weather App](https://vintiw6-weather-app.vercel.app/)  
-🔗 **GitHub Repository:** [Weather App Repo](https://github.com/vintiw6/Projects/tree/main/Weather-App#readme)  
+🔗 **GitHub Repository:** [Weather App Repo](https://github.com/vintiw6/Projects/tree/main/Weather-App)  
 
 ---
 
