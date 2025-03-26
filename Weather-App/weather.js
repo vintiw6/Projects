@@ -4,10 +4,11 @@ const weatherBox = document.querySelector(".weather-box");
 const weatherDetails = document.querySelector(".weather-details");
 const error404 = document.querySelector(".not-found");
 const body = document.body;
+const cityInput = document.querySelector(".search-box input");
 
 search.addEventListener("click", () => {
-	const APIKey = "YOUR_API_KEY"; // Replace with your actual API key
-	const city = document.querySelector(".search-box input").value.trim();
+	const APIKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+	const city = cityInput.value.trim();
 
 	if (city === "") return;
 
@@ -16,10 +17,11 @@ search.addEventListener("click", () => {
 	)
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data);
+			console.log("API Response:", data); // Debugging
 
-			// Handle invalid city
+			// If the city is not found
 			if (data.cod === "404") {
+				console.warn("City not found!"); // Debugging
 				container.style.height = "400px";
 				weatherBox.style.display = "none";
 				weatherDetails.style.display = "none";
@@ -29,6 +31,7 @@ search.addEventListener("click", () => {
 				return;
 			}
 
+			// Reset error display if city is valid
 			error404.style.display = "none";
 			error404.classList.remove("fadeIn");
 
@@ -40,39 +43,40 @@ search.addEventListener("click", () => {
 			);
 			const wind = document.querySelector(".weather-details .wind span");
 
-			const weatherCondition = data.weather[0].main.toLowerCase();
+			// Get the weather condition code (e.g., "01d", "04d")
+			const weatherIconCode = data.weather[0].icon;
+			console.log("Weather Icon Code:", weatherIconCode); // Debugging
 
-			// 🌤️ Set weather icon and background class
+			// OpenWeatherMap icons mapping
 			const weatherIcons = {
-				clear: "images/clear.png",
-				rain: "images/rain.png",
-				snow: "images/snow.png",
-				clouds: "images/cloud.png",
-				haze: "images/mist.png",
-				mist: "images/mist.png",
-				thunderstorm: "images/storm.png",
-				drizzle: "images/drizzle.png",
-				wind: "images/wind.png",
+				"01d": "Images/clear.png",
+				"02d": "Images/cloud.png",
+				"03d": "Images/cloud.png",
+				"04d": "Images/cloud.png",
+				"09d": "Images/rain.png",
+				"10d": "Images/rain.png",
+				"11d": "Images/storm.png",
+				"13d": "Images/snow.png",
+				"50d": "Images/mist.png",
 			};
 
-			// Set image based on weather condition
-			image.src = weatherIcons[weatherCondition] || "images/default.png";
+			image.src = weatherIcons[weatherIconCode] || "Images/default.png";
 
-			// Apply corresponding background class
+			// Map background classes
 			const backgroundClasses = {
-				clear: "sunny",
-				clouds: "cloudy",
-				rain: "rainy",
-				snow: "snowy",
-				haze: "hazy",
-				mist: "hazy",
-				thunderstorm: "stormy",
-				drizzle: "rainy",
-				wind: "windy",
+				"01d": "sunny",
+				"02d": "cloudy",
+				"03d": "cloudy",
+				"04d": "cloudy",
+				"09d": "rainy",
+				"10d": "rainy",
+				"11d": "stormy",
+				"13d": "snowy",
+				"50d": "hazy",
 			};
 
-			// Remove previous class and add new one
-			body.className = backgroundClasses[weatherCondition] || "";
+			// Update background class
+			body.className = backgroundClasses[weatherIconCode] || "";
 
 			// Update weather details
 			temperature.innerHTML = `${Math.round(data.main.temp)}<span>°C</span>`;
@@ -80,15 +84,27 @@ search.addEventListener("click", () => {
 			humidity.innerHTML = `${data.main.humidity}%`;
 			wind.innerHTML = `${Math.round(data.wind.speed)} Km/h`;
 
-			// Display weather information
+			// Make sure weather details are visible
 			weatherBox.style.display = "block";
 			weatherDetails.style.display = "flex";
+
+			// Reset animation and reapply it
+			weatherBox.classList.remove("fadeIn");
+			weatherDetails.classList.remove("fadeIn");
+
+			// Force reflow (fixes animation issues)
+			void weatherBox.offsetWidth;
+
 			weatherBox.classList.add("fadeIn");
 			weatherDetails.classList.add("fadeIn");
+
+			// Adjust container height
 			container.style.height = "590px";
 		})
 		.catch((error) => {
 			console.error("Error fetching weather data:", error);
-			alert("Failed to retrieve weather data. Please try again.");
+			alert(
+				"Failed to retrieve weather data. Please check your API key and try again."
+			);
 		});
 });
