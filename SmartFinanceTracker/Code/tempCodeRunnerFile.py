@@ -1,1 +1,0 @@
-    filtered_df = df.loc(mask)
