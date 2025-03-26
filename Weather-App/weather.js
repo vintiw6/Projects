@@ -3,10 +3,11 @@ const search = document.querySelector(".search-box button");
 const weatherBox = document.querySelector(".weather-box");
 const weatherDetails = document.querySelector(".weather-details");
 const error404 = document.querySelector(".not-found");
+const body = document.body;
 
 search.addEventListener("click", () => {
-	const APIKey = "API_KEY";
-	const city = document.querySelector(".search-box input").value;
+	const APIKey = "YOUR_API_KEY"; // Replace with your actual API key
+	const city = document.querySelector(".search-box input").value.trim();
 
 	if (city === "") return;
 
@@ -16,12 +17,15 @@ search.addEventListener("click", () => {
 		.then((response) => response.json())
 		.then((data) => {
 			console.log(data);
+
+			// Handle invalid city
 			if (data.cod === "404") {
 				container.style.height = "400px";
 				weatherBox.style.display = "none";
 				weatherDetails.style.display = "none";
 				error404.style.display = "block";
 				error404.classList.add("fadeIn");
+				body.className = ""; // Reset background
 				return;
 			}
 
@@ -36,44 +40,55 @@ search.addEventListener("click", () => {
 			);
 			const wind = document.querySelector(".weather-details .wind span");
 
-			switch (data.weather[0].main) {
-				case "Clear":
-					image.src = "images/clear.png";
-					break;
+			const weatherCondition = data.weather[0].main.toLowerCase();
 
-				case "Rain":
-					image.src = "images/rain.png";
-					break;
+			// 🌤️ Set weather icon and background class
+			const weatherIcons = {
+				clear: "images/clear.png",
+				rain: "images/rain.png",
+				snow: "images/snow.png",
+				clouds: "images/cloud.png",
+				haze: "images/mist.png",
+				mist: "images/mist.png",
+				thunderstorm: "images/storm.png",
+				drizzle: "images/drizzle.png",
+				wind: "images/wind.png",
+			};
 
-				case "Snow":
-					image.src = "images/snow.png";
-					break;
+			// Set image based on weather condition
+			image.src = weatherIcons[weatherCondition] || "images/default.png";
 
-				case "Clouds":
-					image.src = "images/cloud.png";
-					break;
+			// Apply corresponding background class
+			const backgroundClasses = {
+				clear: "sunny",
+				clouds: "cloudy",
+				rain: "rainy",
+				snow: "snowy",
+				haze: "hazy",
+				mist: "hazy",
+				thunderstorm: "stormy",
+				drizzle: "rainy",
+				wind: "windy",
+			};
 
-				case "Haze":
-					image.src = "images/mist.png";
-					break;
+			// Remove previous class and add new one
+			body.className = backgroundClasses[weatherCondition] || "";
 
-				case "Mist":
-					image.src = "images/mist.png";
-					break;
-
-				default:
-					image.src = "";
-			}
-
-			temperature.innerHTML = `${parseInt(data.main.temp)}<span>°C</span>`;
-			description.innerHTML = `${data.weather[0].description}`;
+			// Update weather details
+			temperature.innerHTML = `${Math.round(data.main.temp)}<span>°C</span>`;
+			description.innerHTML = data.weather[0].description;
 			humidity.innerHTML = `${data.main.humidity}%`;
-			wind.innerHTML = `${parseInt(data.wind.speed)}Km/h`;
+			wind.innerHTML = `${Math.round(data.wind.speed)} Km/h`;
 
-			weatherBox.style.display = "";
-			weatherDetails.style.display = "";
+			// Display weather information
+			weatherBox.style.display = "block";
+			weatherDetails.style.display = "flex";
 			weatherBox.classList.add("fadeIn");
 			weatherDetails.classList.add("fadeIn");
 			container.style.height = "590px";
+		})
+		.catch((error) => {
+			console.error("Error fetching weather data:", error);
+			alert("Failed to retrieve weather data. Please try again.");
 		});
 });

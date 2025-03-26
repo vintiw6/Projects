@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		background.innerHTML = "";
 	}
 
-	function generateClouds() {
+	function generateClouds(cloudDensity = 3) {
 		clearEffects();
-		let cloudCount = Math.floor(Math.random() * 5) + 3;
+		let cloudCount = Math.floor(Math.random() * cloudDensity) + cloudDensity;
 
 		for (let i = 0; i < cloudCount; i++) {
 			let cloud = document.createElement("div");
@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-	function generateRain() {
+	function generateRain(intensity = 50) {
 		clearEffects();
-		let rainCount = Math.floor(Math.random() * 30) + 50;
+		let rainCount = Math.floor(Math.random() * intensity) + intensity;
 
 		for (let i = 0; i < rainCount; i++) {
 			let drop = document.createElement("div");
@@ -48,9 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
+	function generateThunderstorm() {
+		generateRain(70);
+
+		let thunder = document.createElement("div");
+		thunder.classList.add("thunder");
+		background.appendChild(thunder);
+
+		setInterval(() => {
+			thunder.style.opacity = Math.random() > 0.5 ? 1 : 0;
+		}, Math.random() * 2000 + 1000);
+	}
+
 	function generateSnow() {
 		clearEffects();
-		let snowCount = Math.floor(Math.random() * 30) + 50;
+		let snowCount = Math.floor(Math.random() * 50) + 50;
 
 		for (let i = 0; i < snowCount; i++) {
 			let snow = document.createElement("div");
@@ -71,88 +83,69 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 	}
 
-	function generateThunderstorm() {
+	function generateMist() {
 		clearEffects();
-		generateRain();
-
-		let thunder = document.createElement("div");
-		thunder.classList.add("thunder");
-		background.appendChild(thunder);
-
-		setInterval(() => {
-			thunder.style.opacity = Math.random() > 0.5 ? 1 : 0;
-		}, Math.random() * 2000 + 1000);
+		let mist = document.createElement("div");
+		mist.classList.add("mist");
+		background.appendChild(mist);
 	}
 
-	function generateFog() {
-		clearEffects();
-		let fog = document.createElement("div");
-		fog.classList.add("fog");
-		background.appendChild(fog);
-	}
-
-	function generateWind() {
-		clearEffects();
-		let wind = document.createElement("div");
-		wind.classList.add("wind");
-		background.appendChild(wind);
-	}
-
-	function updateWeather(weatherDescription) {
+	function updateWeather(weatherCode) {
 		body.classList.remove(
 			"sunny",
-			"rainy",
-			"cloudy",
-			"snowy",
-			"hazy",
-			"stormy",
-			"windy"
+			"few-clouds",
+			"scattered-clouds",
+			"broken-clouds",
+			"shower-rain",
+			"rain",
+			"thunderstorm",
+			"snow",
+			"mist"
 		);
 
-		if (weatherDescription.includes("clear")) {
-			body.classList.add("sunny");
-			generateClouds();
-		} else if (
-			weatherDescription.includes("rain") ||
-			weatherDescription.includes("drizzle")
-		) {
-			body.classList.add("rainy");
-			generateRain();
-		} else if (weatherDescription.includes("snow")) {
-			body.classList.add("snowy");
-			generateSnow();
-		} else if (
-			weatherDescription.includes("cloud") ||
-			weatherDescription.includes("overcast")
-		) {
-			body.classList.add("cloudy");
-			generateClouds();
-		} else if (
-			weatherDescription.includes("haze") ||
-			weatherDescription.includes("mist") ||
-			weatherDescription.includes("fog")
-		) {
-			body.classList.add("hazy");
-			generateFog();
-		} else if (
-			weatherDescription.includes("thunderstorm") ||
-			weatherDescription.includes("storm")
-		) {
-			body.classList.add("stormy");
-			generateThunderstorm();
-		} else if (
-			weatherDescription.includes("wind") ||
-			weatherDescription.includes("gale")
-		) {
-			body.classList.add("windy");
-			generateWind();
-		} else {
-			body.classList.add("cloudy");
-			generateClouds();
+		switch (weatherCode) {
+			case "01d":
+				body.classList.add("sunny");
+				generateClouds(2);
+				break;
+			case "02d":
+				body.classList.add("few-clouds");
+				generateClouds(3);
+				break;
+			case "03d":
+				body.classList.add("scattered-clouds");
+				generateClouds(5);
+				break;
+			case "04d":
+				body.classList.add("broken-clouds");
+				generateClouds(7);
+				break;
+			case "09d":
+				body.classList.add("shower-rain");
+				generateRain(40);
+				break;
+			case "10d":
+				body.classList.add("rain");
+				generateRain(70);
+				break;
+			case "11d":
+				body.classList.add("thunderstorm");
+				generateThunderstorm();
+				break;
+			case "13d":
+				body.classList.add("snow");
+				generateSnow();
+				break;
+			case "50d":
+				body.classList.add("mist");
+				generateMist();
+				break;
+			default:
+				body.classList.add("few-clouds");
+				generateClouds(3);
+				break;
 		}
 	}
-
-	updateWeather("clear sky");
 
 	search.addEventListener("click", () => {
 		const APIKey = "API_KEY";
@@ -175,8 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
 					return;
 				}
 
-				const weatherDescription = data.weather[0].description.toLowerCase();
-				updateWeather(weatherDescription);
+				const weatherCode = data.weather[0].icon;
+				updateWeather(weatherCode);
 			})
 			.catch((error) => {
 				console.error("Error fetching weather:", error);

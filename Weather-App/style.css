@@ -18,39 +18,49 @@ body {
 	transition: background 2s ease-in-out;
 }
 
-/* 🌤️ Sunny */
+/* 🌞 01d - Clear Sky */
 body.sunny {
 	background: linear-gradient(135deg, #ffd700, #ffa500);
 }
 
-/* ☁️ Cloudy */
-body.cloudy {
+/* 🌤️ 02d - Few Clouds */
+body.few-clouds {
 	background: linear-gradient(135deg, #d3d3d3, #808080);
 }
 
-/* 🌧️ Rain */
-body.rainy {
-	background: linear-gradient(135deg, #1e3a5f, #3a6073);
+/* ☁️ 03d - Scattered Clouds */
+body.scattered-clouds {
+	background: linear-gradient(135deg, #b0c4de, #778899);
 }
 
-/* ❄️ Snow */
-body.snowy {
-	background: linear-gradient(135deg, #add8e6, #ffffff);
+/* ☁️ 04d - Broken Clouds */
+body.broken-clouds {
+	background: linear-gradient(135deg, #909090, #505050);
 }
 
-/* 🌫️ Mist, Haze */
-body.hazy {
-	background: linear-gradient(135deg, #c0c0c0, #778899);
+/* 🌧️ 09d - Shower Rain */
+body.shower-rain {
+	background: linear-gradient(135deg, #3a6073, #1e3a5f);
 }
 
-/* ⛈️ Thunderstorm */
-body.stormy {
+/* 🌧️ 10d - Rain */
+body.rain {
+	background: linear-gradient(135deg, #283e51, #0f2027);
+}
+
+/* ⛈️ 11d - Thunderstorm */
+body.thunderstorm {
 	background: linear-gradient(135deg, #2c3e50, #000000);
 }
 
-/* 💨 Windy */
-body.windy {
-	background: linear-gradient(135deg, #b0c4de, #4682b4);
+/* ❄️ 13d - Snow */
+body.snow {
+	background: linear-gradient(135deg, #add8e6, #ffffff);
+}
+
+/* 🌫️ 50d - Mist */
+body.mist {
+	background: linear-gradient(135deg, #c0c0c0, #778899);
 }
 
 /* Background Animation */
@@ -129,17 +139,17 @@ body.windy {
 	}
 }
 
-/* 🌫️ Fog */
-.fog {
+/* 🌫️ Mist */
+.mist-effect {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background: rgba(192, 192, 192, 0.4);
 	filter: blur(10px);
-	animation: fogEffect 3s infinite alternate ease-in-out;
+	animation: mistEffect 3s infinite alternate ease-in-out;
 }
 
-@keyframes fogEffect {
+@keyframes mistEffect {
 	0% {
 		opacity: 0.3;
 	}
