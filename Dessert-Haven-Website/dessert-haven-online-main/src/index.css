@@ -1,0 +1,103 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 30 84% 42%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 150 90% 30%;
+    --secondary-foreground: 40 33% 98%;
+
+    --muted: 30 10% 92%;
+    --muted-foreground: 30 10% 40%;
+
+    --accent: 40 85% 88%;
+    --accent-foreground: 30 10% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 33% 98%;
+
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 30 84% 42%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-spice;
+  }
+}
+
+@layer components {
+  .cafe-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .menu-item {
+    @apply relative overflow-hidden rounded-lg shadow-md transition-all hover:shadow-lg;
+  }
+  
+  .menu-item-image {
+    @apply w-full h-48 object-cover;
+  }
+  
+  .menu-item-content {
+    @apply p-4;
+  }
+
+  .bill-container {
+    @apply bg-card text-card-foreground p-6 rounded-lg shadow-lg border border-border print:shadow-none print:border print:border-black;
+  }
+  
+  .bill-header {
+    @apply text-center mb-6;
+  }
+  
+  .bill-table {
+    @apply w-full border-collapse;
+  }
+  
+  .bill-table th {
+    @apply p-2 text-left border-b-2 border-border text-foreground;
+  }
+  
+  .bill-table td {
+    @apply p-2 border-b border-border/70 text-foreground;
+  }
+  
+  .bill-total {
+    @apply mt-4 text-right font-bold text-lg text-foreground;
+  }
+}

@@ -1,0 +1,95 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                 Int       @id @default(autoincrement())
+  email              String    @unique
+  password           String
+  userinfo           UserInfo?
+}
+
+model UserInfo {
+  id                 Int      @id @default(autoincrement()) 
+  name               String   @default("")
+  image              String   @default("") 
+  phone              String   @default("")
+  streetAddress      String   @default("")
+  postalCode         String   @default("")
+  city               String   @default("")
+  country            String   @default("") 
+  admin              Boolean  @default(false)
+  createdAt          DateTime @default(now())
+  user               User     @relation(fields: [userId], references: [id])
+  userId             Int      @unique 
+}
+
+model Category {
+  id                    Int           @id @default(autoincrement()) 
+  name                  String        @unique
+  menuItems             MenuItem[]    
+  createdAt             DateTime      @default(now())
+}
+
+model MenuItem {
+  id                     Int          @id @default(autoincrement()) 
+  image                  String?
+  name                   String?
+  description            String?
+  basePrice              String
+  categoryId             Int 
+  category               Category     @relation(fields: [categoryId], references: [id])
+  orderId                Int? 
+  order                  Order?       @relation(fields: [orderId], references: [id])   
+  sizes                  MenuItemSizes[]   
+  sides                  MenuItemSides[]  
+}
+
+model ExtraPriceSize {
+  id                 Int     @id @default(autoincrement()) // Auto-incrementing primary key
+  name               String  @unique 
+  price              String
+  menuItemSizes      MenuItemSizes[] 
+}
+
+model MenuItemSizes {
+  menuItem           MenuItem       @relation(fields: [menuItemId], references: [id], onDelete: Cascade) 
+  menuItemId         Int 
+  extraPriceSize     ExtraPriceSize @relation(fields: [extraPriceSizeId], references: [id])
+  extraPriceSizeId   Int  
+
+  @@id([menuItemId, extraPriceSizeId])
+}
+
+model ExtraPriceSide {
+  id                 Int     @id @default(autoincrement()) // Auto-incrementing primary key
+  name               String  @unique 
+  price              String
+  menuItemPrices     MenuItemSides[] 
+}
+
+model MenuItemSides {
+  menuItem           MenuItem       @relation(fields: [menuItemId], references: [id], onDelete: Cascade) 
+  menuItemId         Int  
+  extraPriceSide     ExtraPriceSide @relation(fields: [extraPriceSideId], references: [id])
+  extraPriceSideId   Int  
+
+  @@id([menuItemId, extraPriceSideId])
+}
+
+model Order {
+  id                 Int      @id @default(autoincrement())
+  userEmail          String 
+  phone              String 
+  streetAddress      String 
+  postalCode         String 
+  city               String 
+  country            String 
+  cartProducts       MenuItem[] 
+  paid               Boolean  @default(false)
+}
