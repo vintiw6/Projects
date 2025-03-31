@@ -1,69 +1,118 @@
-# Welcome to your Lovable project
+Sure! Here's a **README.md** file for your **Dessert-Haven-Website** repository:  
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/2694e6be-02b4-44a0-96f6-f5372574b335
+# 🍰 Dessert Haven Website
 
-## How can I edit this code?
+Welcome to **Dessert Haven**, your go-to online bakery for delicious desserts! This project is a full-stack web application designed to showcase a modern dessert shop, allowing users to browse, order, and learn more about our sweet treats.
 
-There are several ways of editing your application.
+🔗 **Live Demo**: [Dessert Haven Website](https://dessert-haven-website.vercel.app/)  
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2694e6be-02b4-44a0-96f6-f5372574b335) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+### **Frontend (Client)**
+- **Vite + React** → Fast development and optimized builds  
+- **TypeScript** → Strong typing for better code quality  
+- **Tailwind CSS** → Modern and efficient styling  
+- **React Router** → Seamless navigation  
 
-**Use your preferred IDE**
+### **Backend (Server)**
+- **Node.js + Express.js** → Handles API requests  
+- **MongoDB + Mongoose** → Stores desserts, orders, and user data  
+- **CORS + dotenv** → Security and configuration  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### **Deployment**
+- **Frontend** → Hosted on **Vercel**  
+- **Backend** → Hosted on **Render/Railway**  
+- **Database** → MongoDB Atlas  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🚀 Features
 
+✔️ **Browse Desserts** – View a delicious menu of cakes, pastries, and more  
+✔️ **User Authentication** – Sign up, log in, and manage your profile  
+✔️ **Cart & Checkout** – Add desserts to cart and place orders  
+✔️ **Admin Panel** – Manage products and orders (if applicable)  
+✔️ **Responsive Design** – Mobile-friendly UI  
+
+---
+
+## 🏗️ Installation & Setup
+
+### **1️⃣ Clone the Repository**
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+git clone https://github.com/vintiw6/Projects.git
+cd Projects/Dessert-Haven-Website
 ```
 
-**Edit a file directly in GitHub**
+### **2️⃣ Install Dependencies**
+#### Frontend
+```sh
+cd frontend
+npm install
+npm run dev
+```
+#### Backend
+```sh
+cd backend
+npm install
+npm start
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### **3️⃣ Set Up Environment Variables**
+Create a `.env` file in `backend/` with:
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📂 Project Structure
 
-## What technologies are used for this project?
+```
+Dessert-Haven-Website/
+│── frontend/       # React + Vite frontend
+│── backend/        # Node.js + Express backend
+│── public/         # Static assets
+│── src/            # Source code
+│── .env            # Environment variables
+│── README.md       # Documentation
+```
 
-This project is built with .
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📌 API Endpoints
 
-## How can I deploy this project?
+| Method | Endpoint           | Description             |
+|--------|-------------------|-------------------------|
+| GET    | `/api/desserts`   | Fetch all desserts     |
+| POST   | `/api/orders`     | Place an order         |
+| POST   | `/api/users/login` | Authenticate user      |
 
-Simply open [Lovable](https://lovable.dev/projects/2694e6be-02b4-44a0-96f6-f5372574b335) and click on Share -> Publish.
+---
 
-## I want to use a custom domain - is that possible?
+## ✨ Future Enhancements
+- 🍪 Add real-time order tracking  
+- 📦 Integrate Stripe for payments  
+- 📱 Develop a mobile app version  
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+---
+
+## 🎉 Contributing
+
+Want to improve Dessert Haven? Fork the repo, create a branch, and submit a PR! 💖
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+Let me know if you want any modifications! 🚀
