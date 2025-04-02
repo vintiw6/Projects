@@ -7,14 +7,15 @@ Welcome to the **Projects** repository! This repository serves as a collection o
 
 ## 📂 Repository Contents
 
-- **CreditCard-Validator**: 💳 A tool designed to validate credit card numbers using standard algorithms.
-- **DataAnalysis-Basic**: 📊 A collection of Jupyter Notebooks demonstrating fundamental data analysis techniques.
-- **Dessert-Haven-Website**: 🍰 A website dedicated to showcasing and sharing dessert recipes.
-- **Old-Portfolio**: 🗂️ An archive of a previous personal portfolio website.
-- **Pizza-website**: 🍕 A web application centered around pizza ordering or information.
-- **SlotMachine**: 🎰 A simple slot machine game implemented for entertainment purposes.
-- **SmartFinanceTracker**: 💰 An application aimed at tracking and managing personal finances intelligently.
-- **Weather-App**: ☀️ An application that provides weather forecasts based on user input or location.
+
+- **CreditCard-Validator**: 💳 A tool to validate credit card numbers using the Luhn algorithm.
+- **DataAnalysis-Basic**: 📊 Jupyter notebooks demonstrating basic data analysis techniques and visualizations.
+- **Dessert-Haven-Website**: 🍰 A website dedicated to dessert recipes and blogs, built with modern web technologies.
+- **Old-Portfolio**: 🗂️ My previous personal portfolio showcasing past projects and experiences.
+- **Pizza-website**: 🍕 A web application for a fictional pizza restaurant, featuring menu displays and online ordering functionalities.
+- **SlotMachine**: 🎰 A simple slot machine game implemented to understand game mechanics and randomization.
+- **SmartFinanceTracker**: 💰 An application designed to help users track and manage their personal finances effectively.
+- **Weather-App**: ☀️ A weather forecasting application that provides real-time weather data for various locations.
 
 
 ## 🛠️ Technologies Used
