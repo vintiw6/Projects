@@ -41,4 +41,4 @@ To run this project locally, follow these steps:
 ### Prerequisites ✅
 
 * A web browser (e.g., Chrome 🌐, Firefox 🔥, Safari 🍎).
-* A code editor (e.g., VS Code <0xF0><0x9F><0x9B><0x8E>️, Sublime Text <0xF0><0x9F><0x97><0x8B>, Atom ⚛️).
+* A code editor (e.g., VS Code ).
