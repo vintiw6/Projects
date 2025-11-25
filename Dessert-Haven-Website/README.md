@@ -1,7 +1,5 @@
 # 🍰 Dessert Haven Website 🍩
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
 A delightful website showcasing a variety of delicious desserts. 😋
 
 **[View the Live Demo](https://dessert-haven-website.vercel.app/) 🚀**
@@ -15,9 +13,6 @@ A delightful website showcasing a variety of delicious desserts. 😋
     * [Prerequisites](#prerequisites) ✅
     * [Installation](#installation) ⚙️
 * [Usage](#usage) 💻
-* [Contributing](#contributing) 🤝
-* [License](#license) 📜
-* [Contact](#contact) 📧
 
 ## About ℹ️
 
@@ -47,42 +42,3 @@ To run this project locally, follow these steps:
 
 * A web browser (e.g., Chrome 🌐, Firefox 🔥, Safari 🍎).
 * A code editor (e.g., VS Code <0xF0><0x9F><0x9B><0x8E>️, Sublime Text <0xF0><0x9F><0x97><0x8B>, Atom ⚛️).
-* (Optional) Node.js ⚙️ and npm <0xF0><0x9F><0x93><0x8B> (or yarn 🧶) if you intend to use any build tools or more advanced features.
-
-### Installation ⚙️
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/vintiw6/Projects.git](https://github.com/vintiw6/Projects.git)
-    cd Projects/Dessert-Haven-Website
-    ```
-
-2.  **Open the `index.html` file in your web browser.** 🌐
-
-## Usage 💻
-
-Simply open the `index.html` file in your web browser to view the Dessert Haven Website. You can navigate through the different sections to explore the showcased desserts. 🚶‍♀️
-
-If you have made any modifications to the code, refresh your browser to see the changes. 🔄
-
-## Contributing 🤝
-
-Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
-
-1.  Fork the repository. 🍴
-2.  Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature-name` or `git checkout -b bugfix/your-bug-fix`. 🌿
-3.  Make your changes and commit them: `git commit -m "Add your commit message here"`. ✍️
-4.  Push to the forked repository: `git push origin feature/your-feature-name` or `git push origin bugfix/your-bug-fix`. ⬆️
-5.  Submit a pull request to the main repository. 📤
-
-## License 📜
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. 📄
-
-## Contact 📧
-
-[Your Name/Username] - [Your Email Address (Optional)] - [Your GitHub Profile URL (Optional)] 👋
-
----
-
-**Note:** Please make sure to replace the bracketed placeholders (e.g., `[Potentially other libraries/frameworks if used...]`, `[Your Name/Username]`, etc.) with the actual information relevant to your project. If you have a separate `LICENSE` file in your repository, ensure the link in the "License" section is correct. 👍
